@@ -1,0 +1,1099 @@
+/* =========================================================
+   JANSAARTHI
+   Government Citizen Service Theme
+   Blue + White Professional UI
+========================================================= */
+
+:root {
+  /* Main colors */
+  --bg: #f4f7fb;
+  --fg: #172033;
+  --card: #ffffff;
+
+  /* Government / official blue */
+  --primary: #0b4f8a;
+  --primary-fg: #ffffff;
+
+  /* Light blue accent */
+  --accent: #e8f2fb;
+
+  /* Borders */
+  --border: #b8c7d9;
+
+  /* Status colors */
+  --warn: #fff4d6;
+  --danger: #b3261e;
+
+  /* Secondary text */
+  --muted: #5f6b7a;
+}
+
+
+/* =========================================================
+   HIGH CONTRAST MODE
+========================================================= */
+
+:root[data-contrast="high"] {
+  --bg: #000;
+  --fg: #fff;
+  --card: #111;
+
+  --primary: #4da3ff;
+  --primary-fg: #000;
+
+  --accent: #10243a;
+  --border: #fff;
+
+  --warn: #332b00;
+  --danger: #ff6b60;
+  --muted: #ddd;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+
+  font-family:
+    "Noto Sans",
+    "Noto Sans Devanagari",
+    system-ui,
+    sans-serif;
+
+  font-size: 1.25rem;
+  line-height: 1.5;
+
+  -webkit-tap-highlight-color: transparent;
+
+  user-select: none;
+}
+
+textarea,
+input {
+  user-select: text;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION SHELL
+========================================================= */
+
+.shell {
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+  display: flex;
+  align-items: center;
+
+  gap: .75rem;
+
+  padding: .75rem 1rem;
+
+  border-bottom: 3px solid var(--primary);
+
+  position: sticky;
+  top: 0;
+
+  background: #ffffff;
+
+  z-index: 5;
+
+  box-shadow:
+    0 2px 8px rgba(0, 50, 100, 0.08);
+}
+
+header h1 {
+  flex: 1;
+
+  font-size: 1.5rem;
+
+  margin: 0;
+
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   HEADER TOOLS
+========================================================= */
+
+.tools {
+  display: flex;
+  gap: .5rem;
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTON
+========================================================= */
+
+.nav-btn {
+  min-height: 56px;
+  min-width: 56px;
+
+  padding: 0 1rem;
+
+  font-size: 1.1rem;
+
+  border: 2px solid var(--border);
+
+  border-radius: 12px;
+
+  background: var(--card);
+
+  color: var(--fg);
+
+  cursor: pointer;
+
+  font-family: inherit;
+}
+
+.nav-btn:hover {
+  border-color: var(--primary);
+}
+
+.nav-btn[aria-pressed="true"] {
+  background: var(--primary);
+  color: var(--primary-fg);
+
+  border-color: var(--primary);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+main {
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h2 {
+  font-size: 1.5rem;
+  margin: .5rem 0 0;
+
+  color: var(--primary);
+}
+
+h3 {
+  margin: 0 0 .25rem;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.big {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  margin: .25rem 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.hint,
+.muted {
+  color: var(--muted);
+  margin: 0;
+}
+
+.disclaimer {
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(240px, 1fr)
+    );
+
+  gap: 1rem;
+}
+
+.lang-grid {
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    );
+}
+
+.home-grid {
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    );
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.row {
+  display: flex;
+  gap: .75rem;
+}
+
+.row input {
+  flex: 1;
+}
+
+
+/* =========================================================
+   LARGE BUTTONS
+========================================================= */
+
+.big-btn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: .75rem;
+
+  min-height: 80px;
+
+  padding: .75rem 1.25rem;
+
+  font-size: 1.4rem;
+
+  font-weight: 600;
+
+  border: 3px solid var(--border);
+
+  border-radius: 18px;
+
+  background: var(--card);
+
+  color: var(--fg);
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    background .15s ease,
+    border-color .15s ease,
+    transform .1s ease;
+}
+
+.big-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.big-btn:active:not(:disabled) {
+  transform: scale(.98);
+}
+
+.big-btn:focus-visible,
+.nav-btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.mic:focus-visible {
+  outline: 5px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.big-btn.primary {
+  background: var(--primary);
+
+  color: var(--primary-fg);
+
+  border-color: var(--primary);
+}
+
+.big-btn.primary:hover:not(:disabled) {
+  background: #083e6d;
+  border-color: #083e6d;
+}
+
+
+/* =========================================================
+   BUTTON VARIANTS
+========================================================= */
+
+.big-btn.ghost {
+  background: transparent;
+}
+
+.big-btn.danger {
+  background: var(--danger);
+
+  color: #fff;
+
+  border-color: var(--danger);
+}
+
+.big-btn.small {
+  min-height: 56px;
+
+  font-size: 1.1rem;
+
+  align-self: flex-start;
+}
+
+.big-btn.choice[aria-pressed="true"] {
+  background: var(--accent);
+
+  border-color: var(--primary);
+
+  color: var(--primary);
+}
+
+.big-btn:disabled {
+  opacity: .45;
+
+  cursor: not-allowed;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+
+/* =========================================================
+   LANGUAGE BUTTON
+========================================================= */
+
+.big-btn.lang {
+  flex-direction: column;
+
+  gap: 0;
+
+  min-height: 110px;
+}
+
+.native {
+  font-size: 1.9rem;
+}
+
+.sub {
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+textarea {
+  width: 100%;
+
+  font: inherit;
+
+  font-size: 1.3rem;
+
+  padding: .9rem 1rem;
+
+  border: 3px solid var(--border);
+
+  border-radius: 14px;
+
+  background: var(--card);
+
+  color: var(--fg);
+
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(11, 79, 138, .12);
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: .35rem;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+  background: var(--card);
+
+  border: 2px solid var(--border);
+
+  border-radius: 16px;
+
+  padding: 1rem 1.25rem;
+
+  box-shadow:
+    0 2px 6px rgba(20, 50, 80, .05);
+}
+
+.card.likely_eligible {
+  border-color: var(--primary);
+
+  border-width: 3px;
+}
+
+.card blockquote {
+  margin: .5rem 0;
+
+  padding-left: .75rem;
+
+  border-left: 4px solid var(--border);
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   STEP CARD
+========================================================= */
+
+.card.step {
+  display: flex;
+
+  gap: 1rem;
+
+  align-items: flex-start;
+}
+
+.num {
+  flex: none;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: var(--primary-fg);
+
+  display: grid;
+
+  place-items: center;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.badge.high,
+.badge.likely_fraud {
+  background: #fbe3e1;
+
+  border-color: var(--danger);
+
+  color: #5c0f0a;
+}
+
+.badge.medium,
+.badge.suspicious {
+  background: var(--warn);
+
+  color: #3d2e00;
+}
+
+.badge.low,
+.badge.none,
+.badge.low_concern,
+.badge.no_flags {
+  background: var(--accent);
+
+  color: #0b3d22;
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
+
+.tag {
+  font-size: .85rem;
+
+  padding: .15rem .6rem;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+
+  color: var(--fg);
+
+  border: 1px solid var(--border);
+
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   ADVICE
+========================================================= */
+
+.advice li {
+  margin: .4rem 0;
+}
+
+
+/* =========================================================
+   NOTICES
+========================================================= */
+
+.notice {
+  background: var(--warn);
+
+  border: 2px solid var(--border);
+
+  border-radius: 12px;
+
+  padding: .75rem 1rem;
+
+  color: var(--fg);
+}
+
+.notice.ok {
+  background: var(--accent);
+
+  border-color: var(--primary);
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error {
+  display: flex;
+
+  align-items: center;
+
+  gap: .75rem;
+
+  background: #fbe3e1;
+
+  color: #5c0f0a;
+
+  border: 3px solid var(--danger);
+
+  border-radius: 14px;
+
+  padding: .75rem 1rem;
+
+  flex-wrap: wrap;
+}
+
+.error p {
+  margin: 0;
+
+  flex: 1;
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.spinner-wrap {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 3rem 0;
+}
+
+.spinner {
+  width: 72px;
+  height: 72px;
+
+  border: 8px solid var(--border);
+
+  border-top-color: var(--primary);
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 3s;
+  }
+
+  .pulse,
+  .mic.live {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress {
+  display: flex;
+
+  align-items: center;
+
+  gap: .5rem;
+}
+
+.dot {
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  border: 3px solid var(--border);
+}
+
+.dot.on {
+  background: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.progress-text {
+  margin-left: .5rem;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   MICROPHONE
+========================================================= */
+
+.mic {
+  align-self: center;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  font-size: 4rem;
+
+  border: 6px solid var(--primary);
+
+  background: var(--card);
+
+  cursor: pointer;
+}
+
+.mic.live {
+  background: var(--danger);
+
+  border-color: var(--danger);
+
+  animation: pulse 1.2s infinite;
+}
+
+
+/* =========================================================
+   PULSE
+========================================================= */
+
+.pulse {
+  font-size: 4rem;
+
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+/* =========================================================
+   RECEIPT
+========================================================= */
+
+.receipt {
+  background: #fff;
+
+  color: #000;
+
+  border: 2px dashed #777;
+
+  padding: 1rem;
+
+  font-family:
+    "Noto Sans Mono",
+    monospace;
+
+  font-size: 1.05rem;
+
+  white-space: pre-wrap;
+
+  max-width: 34ch;
+
+  align-self: center;
+
+  user-select: text;
+}
+
+
+/* =========================================================
+   MODAL / OVERLAY
+========================================================= */
+
+.overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, .7);
+
+  display: grid;
+
+  place-items: center;
+
+  z-index: 50;
+}
+
+.dialog {
+  background: var(--card);
+
+  padding: 2rem;
+
+  border-radius: 20px;
+
+  max-width: 480px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+  text-align: center;
+
+  border: 2px solid var(--border);
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, .2);
+}
+
+
+/* =========================================================
+   USER PROFILE
+========================================================= */
+
+.profile-card {
+  padding: 1.25rem;
+}
+
+.profile-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(240px, 1fr)
+    );
+
+  gap: 1rem;
+
+  margin-top: 1rem;
+}
+
+.profile-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: .25rem;
+
+  padding: .9rem;
+
+  border: 2px solid var(--border);
+
+  border-radius: 12px;
+
+  background: var(--bg);
+}
+
+.profile-item strong {
+  font-size: 1rem;
+
+  color: var(--primary);
+}
+
+.profile-item span {
+  font-size: 1.2rem;
+}
+
+.profile-item-wide {
+  grid-column: span 2;
+}
+
+.status-approved {
+  color: var(--primary);
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPTY PROFILE SECTIONS
+========================================================= */
+
+.empty-profile-section {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 1.5rem 1rem;
+
+  border: 2px dashed var(--border);
+
+  border-radius: 14px;
+
+  margin-top: .75rem;
+
+  background: var(--bg);
+}
+
+.empty-profile-section strong {
+  font-size: 1.25rem;
+
+  color: var(--primary);
+}
+
+.empty-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  color: var(--primary);
+
+  font-size: 1.5rem;
+
+  font-weight: 700;
+
+  margin-bottom: .5rem;
+}
+
+
+/* =========================================================
+   COMPLAINTS
+========================================================= */
+
+.complaint-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: .75rem;
+
+  margin-top: .75rem;
+}
+
+.complaint-item {
+  border: 2px solid var(--border);
+
+  border-radius: 12px;
+
+  padding: .9rem 1rem;
+
+  background: var(--bg);
+}
+
+
+/* =========================================================
+   SCHEMES
+========================================================= */
+
+.scheme-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: .5rem;
+
+  margin-top: .75rem;
+}
+
+.scheme-item {
+  padding: .8rem 1rem;
+
+  border-radius: 12px;
+
+  background: var(--accent);
+
+  border: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.document-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: .5rem;
+
+  margin-top: .75rem;
+}
+
+.document-item {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: .8rem 1rem;
+
+  border: 2px solid var(--border);
+
+  border-radius: 12px;
+
+  background: var(--bg);
+}
+
+.document-item span {
+  color: var(--muted);
+
+  font-size: .9rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .profile-item-wide {
+    grid-column: span 1;
+  }
+
+  header {
+    padding: .65rem .75rem;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  main {
+    padding: .75rem;
+  }
+
+  .big-btn {
+    min-height: 70px;
+
+    font-size: 1.2rem;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}

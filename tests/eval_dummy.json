@@ -1,0 +1,8 @@
+{
+  "in_scope": [
+    {"q": "How do I complain to the Registrar of Cooperative Societies?", "expect_source": "dummy_act", "expect_phrase": "Registrar"},
+    {"q": "What documents are needed to apply for a crop loan?", "expect_source": "dummy_act", "expect_phrase": "land record"},
+    {"q": "Who can become a member and buy shares?", "expect_source": "dummy_act", "expect_phrase": "entry fee"}
+  ],
+  "out_of_scope": ["What is the capital of France?", "Which cricket team won the last match?"]
+}

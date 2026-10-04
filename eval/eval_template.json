@@ -1,0 +1,11 @@
+{
+  "_readme": "Copy to eval/questions.json. Write 20-30 REAL questions that your documents answer (in_scope) and 8-10 that they cannot (out_of_scope). expect_source is part of the document file name.",
+  "in_scope": [
+    {"q": "How do I complain to the Registrar?", "expect_source": "act_or_bylaws_file_name", "expect_phrase": "Registrar"},
+    {"q": "Who can become a member of the society?", "expect_source": "bylaws_file_name"}
+  ],
+  "out_of_scope": [
+    "What is the capital of France?",
+    "Which cricket team won the last match?"
+  ]
+}

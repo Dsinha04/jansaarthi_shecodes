@@ -1,0 +1,50 @@
+{
+  "_readme": "STARTER DATA. Every entry is verified:false. Check each scheme against its official guidelines, then fix the fields and set verified:true and last_checked. Rules use profile fields: owns_land (bool), occupation (list), is_society_member (bool), state (str). ops: eq, any_of, truthy",
+  "schemes": [
+    {
+      "id": "pm_kisan",
+      "name": "PM-KISAN",
+      "summary": "Income support for landholding farmer families.",
+      "rules": [
+        {"field": "owns_land", "op": "eq", "value": true, "label": "Family owns cultivable land"}
+      ],
+      "exclusions": ["Check the official exclusion list (for example institutional landholders, income tax payers, serving or retired government employees)."],
+      "documents": ["Aadhaar", "Land record", "Bank account details"],
+      "where_to_apply": "Common Service Centre, local agriculture office or the official portal",
+      "source_url": "https://pmkisan.gov.in",
+      "verified": false,
+      "last_checked": null
+    },
+    {
+      "id": "kcc",
+      "name": "Kisan Credit Card (KCC)",
+      "summary": "Credit card for crop and allied-activity credit needs from banks and cooperative credit societies.",
+      "rules": [
+        {"field": "occupation", "op": "any_of",
+         "value": ["farmer", "tenant_farmer", "sharecropper", "dairy", "fisher", "poultry", "shg_member"],
+         "label": "Farmer, tenant or sharecropper, or engaged in dairy, fisheries or poultry"}
+      ],
+      "exclusions": [],
+      "documents": ["Identity proof", "Address proof", "Land record or tenancy proof", "Passport photo"],
+      "where_to_apply": "Your cooperative credit society, cooperative bank or commercial bank branch",
+      "source_url": "https://www.myscheme.gov.in",
+      "verified": false,
+      "last_checked": null
+    },
+    {
+      "id": "pmfby",
+      "name": "PM Fasal Bima Yojana (crop insurance)",
+      "summary": "Insurance cover against crop loss for notified crops in notified areas.",
+      "rules": [
+        {"field": "occupation", "op": "any_of", "value": ["farmer", "tenant_farmer", "sharecropper"],
+         "label": "Farmer, tenant or sharecropper growing notified crops"}
+      ],
+      "exclusions": ["Cover depends on the crop and area being notified for the season. Check cut-off dates."],
+      "documents": ["Land record or tenancy proof", "Bank account details", "Sowing declaration"],
+      "where_to_apply": "Bank, cooperative society, Common Service Centre or the official portal",
+      "source_url": "https://pmfby.gov.in",
+      "verified": false,
+      "last_checked": null
+    }
+  ]
+}

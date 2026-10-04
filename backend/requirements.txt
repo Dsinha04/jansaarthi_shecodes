@@ -1,0 +1,17 @@
+fastapi==0.115.*
+uvicorn==0.30.*
+pydantic==2.*
+httpx
+python-multipart
+# Document scanning (needed for the Scan feature):
+pytesseract
+Pillow
+pypdf
+python-docx
+pymupdf
+# Also install the Tesseract program itself (Windows: https://github.com/UB-Mannheim/tesseract/wiki, tick Hindi;
+# Linux/Pi: apt install tesseract-ocr tesseract-ocr-hin). If it is not on PATH, set TESSERACT_CMD in .env.
+# Optional, only on the Raspberry Pi (each has a mock fallback if missing):
+# faster-whisper        -> speech-to-text
+# pyserial              -> RFID / fingerprint serial devices
+# IndicTransToolkit     -> offline translation (or set TRANSLATE_API_URL)
